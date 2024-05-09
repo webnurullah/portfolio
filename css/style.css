@@ -94,7 +94,7 @@ hr {
 
 .my-row1 {
     display: flex;
-    width: 100%;
+    width: 90%;
     margin: 1rem auto;
     flex-wrap: wrap;
 }
@@ -236,6 +236,15 @@ hr {
     border-right: .5rem solid #dddddd;
     animation: car-animation 3s linear infinite alternate;
     -webkit-animation: car-animation 3s linear infinite alternate;
+}
+
+@-webkit-keyframes car-animation {
+    0% {
+        left: -10px;
+    }
+    100% {
+        left: 100%;
+    }
 }
 
 @keyframes car-animation {
@@ -411,6 +420,25 @@ header {
     -webkit-animation: hamurger-pulse 1s ease infinite;
 }
 
+@-webkit-keyframes hamurger-pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.4);
+        -webkit-transform: scale(1.4);
+        -moz-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+        -o-transform: scale(1.4);
+    }
+}
+
 @keyframes hamurger-pulse {
     0% {
         opacity: 1;
@@ -445,6 +473,8 @@ header {
     background: url(../img/hero-bg.svg) no-repeat;
     background-position: center;
     background-size: cover;
+    height: 100vh;
+
 }
 
 .hero-section .hero-bg {
@@ -471,7 +501,7 @@ header {
 #hero {
     padding-top: 180px;
     padding-bottom: 80px;
-    /* padding-left: 10%; */
+    padding-left: 10%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -484,6 +514,8 @@ header {
     display: block;
     color: transparent;
     font-size: 4rem;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     margin: .5rem 0;
     animation: text-reveal 0.5s ease 1s forwards;
@@ -491,12 +523,14 @@ header {
 }
 
 #hero h1:nth-child(1) {
-    animation-delay: 1s;
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
     text-transform: capitalize;
 }
 
 #hero h1:nth-child(2) {
-    animation-delay: 2s;
+    -webkit-animation-delay: 2s;
+            animation-delay: 2s;
     text-transform: capitalize;
 }
 
@@ -528,11 +562,13 @@ header {
 }
 
 #hero h1:nth-child(1) span {
-    animation-delay: .5s;
+    -webkit-animation-delay: .5s;
+            animation-delay: .5s;
 }
 
 #hero h1:nth-child(2) span {
-    animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
+            animation-delay: 1.5s;
 }
 
 .type-writer-container {
@@ -569,6 +605,17 @@ header {
 
 /* === Hero Section keyframes here === */
 
+@-webkit-keyframes text-reveal-box {
+    50% {
+        left: 0;
+        width: 100%;
+    }
+    100% {
+        left: 100%;
+        width: 0;
+    }
+}
+
 @keyframes text-reveal-box {
     50% {
         left: 0;
@@ -580,9 +627,21 @@ header {
     }
 }
 
+@-webkit-keyframes text-reveal {
+    100% {
+        color: #31C0A5;
+    }
+}
+
 @keyframes text-reveal {
     100% {
         color: #31C0A5;
+    }
+}
+
+@-webkit-keyframes text-reveal-3rd {
+    100% {
+        color: #788DFB;
     }
 }
 
@@ -592,8 +651,25 @@ header {
     }
 }
 
+@-webkit-keyframes type-writer-anim {
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes type-writer-anim {
     100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes btn-anim1 {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    100% {
+        left: 0;
         opacity: 1;
     }
 }
@@ -614,6 +690,9 @@ header {
 
 #about-me {
     padding-top: 70px;
+    background: url(../img/about-p-bg.svg) no-repeat;
+    background-position: top;
+    background-size: contain;
 }
 
 .about-row {
@@ -779,7 +858,6 @@ header {
 .services-section .services-content .card .card-body a {}
 
 .services-section .services-content .card:hover {
-    -webkit-box-shadow: 0px 10px 25px #00BFA5;
     box-shadow: 0px 10px 25px #00BFA5;
 }
 
@@ -809,6 +887,7 @@ header {
 
 .my-testimonial {
     padding: 0px 0px 100px;
+  
 }
 
 .my-carousel {
@@ -850,7 +929,8 @@ header {
 .client-details .pro-pic img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -1176,20 +1256,25 @@ svg.php-per text {
 }
 
 .project-1 {
-    background: url("../img/project-1.png") no-repeat center top;
+    background: url("../img/project/project-one.webp") no-repeat center top;
 }
 
 .project-2 {
-    background: url("../img/project-2.png") no-repeat center top;
+    background: url("../img/project/project-two.webp") no-repeat center top;
 }
-
 .project-3 {
-    background: url("../img/project-3.png") no-repeat center top;
+    background: url("../img/project/project-three.webp") no-repeat center top;
+}
+.project-4 {
+    background: url("../img/project/project-four.webp") no-repeat center top;
+}
+.project-5 {
+    background: url("../img/project/project-five.webp") no-repeat center top;
+}
+.project-6 {
+    background: url("../img/project/project-sis.webp") no-repeat center top;
 }
 
-.project-4 {
-    background: url("../img/project-4.png") no-repeat center top;
-}
 
 .visit-btn {
     font-size: 16px;
@@ -1842,6 +1927,9 @@ svg.php-per text {
         width: 100%;
     }
     .project-row {
+        width: 90%;
+        margin: 1rem auto;
+        flex-wrap: wrap;
         padding: 1rem !important;
     }
     .plan-row {
@@ -1868,7 +1956,8 @@ svg.php-per text {
     .pro-pic-con img {
         width: 20.5rem;
         height: 20.5rem;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
         border-radius: 50% !important;
         -webkit-border-radius: 50% !important;
         -moz-border-radius: 50% !important;
